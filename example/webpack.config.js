@@ -12,9 +12,7 @@ module.exports = {
         test: /\.properties$/,
         loader: require.resolve('messageformat-properties-loader'),
         options: {
-          biDiSupport: false,
-          locales: 'en',
-          path: true
+          keyPath: true
         }
       }
     ]

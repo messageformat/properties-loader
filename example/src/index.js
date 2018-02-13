@@ -1,4 +1,4 @@
-import messages from './messages.properties'
+import messages from './messages_en.properties'
 const { format, messages: errors } = messages.errors
 
 function component() {
