@@ -1,13 +1,14 @@
 {
   "name": "messageformat-properties-loader",
   "version": "0.0.1",
-  "description": "Webpack loader for .properties files (e.g. Java property resource bundles)",
+  "description": "Locale Property Resource Bundle Loader for Webpack",
   "keywords": [
-    "messageformat",
     "properties",
-    "text",
+    "property",
     "resource",
     "bundle",
+    "locale",
+    "messageformat",
     "i18n",
     "webpack"
   ],
