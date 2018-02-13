@@ -1,0 +1,26 @@
+{
+  "name": "messageformat-properties-loader",
+  "version": "0.0.1",
+  "description": "Webpack loader for .properties files (e.g. Java property resource bundles)",
+  "keywords": [
+    "messageformat",
+    "properties",
+    "text",
+    "resource",
+    "bundle",
+    "i18n",
+    "webpack"
+  ],
+  "main": "index.js",
+  "repository": "https://github.com/messageformat/properties-loader",
+  "author": "Eemeli Aro <eemeli@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.0"
+  },
+  "dependencies": {
+    "dot-properties": "^0.1.0",
+    "loader-utils": "^1.1.0",
+    "messageformat": "^1.1.1"
+  }
+}
