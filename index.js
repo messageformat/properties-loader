@@ -15,11 +15,13 @@ function localeFromResourcePath (resourcePath, pathSep, defaultLocale) {
   return /^[a-z]{2,3}$/.test(locale || '') ? locale : defaultLocale
 }
 
-module.exports = function (input) {
-  const { biDiSupport, defaultLocale, keyPath, pathSep } = loaderUtils.getOptions(this)
+module.exports = function (content) {
+  const { biDiSupport, defaultLocale, encoding, keyPath, pathSep } = loaderUtils.getOptions(this) || {}
+  const input = content.toString(encoding || 'latin1')
   const translations = parse(input, keyPath || false)
   const locale = localeFromResourcePath(this.resourcePath, pathSep || '_', defaultLocale || 'en')
   const mf = new MessageFormat(locale)
   if (biDiSupport) mf.setBiDiSupport()
   return mf.compile(translations).toString('module.exports')
 }
+module.exports.raw = true
