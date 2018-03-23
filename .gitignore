@@ -1,4 +1,6 @@
 .*
-node_modules/
 example/dist/bundle.js
+example/node_modules/
 example/package-lock.json
+messageformat-properties-loader-*.tgz
+node_modules/
