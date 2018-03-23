@@ -13,11 +13,7 @@ second is the two- or three-letter language code [as in Java Resource Bundles](h
 ## Installation
 
 ```sh
-npm install messageformat-properties-loader
-```
-or
-```sh
-yarn add messageformat-properties-loader
+npm install messageformat messageformat-properties-loader
 ```
 
 

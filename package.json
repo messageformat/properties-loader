@@ -21,7 +21,9 @@
   },
   "dependencies": {
     "dot-properties": "^0.1.0",
-    "loader-utils": "^1.1.0",
-    "messageformat": "^1.1.1"
+    "loader-utils": "^1.1.0"
+  },
+  "peerDependencies": {
+    "messageformat": "1.x | 2.x"
   }
 }

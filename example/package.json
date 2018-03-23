@@ -12,7 +12,10 @@
   "author": "Eemeli Aro <eemeli@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "messageformat-properties-loader": "file:../",
+    "messageformat-properties-loader": "^0.2.0",
     "webpack": "^3.11.0"
+  },
+  "dependencies": {
+    "messageformat": "^2.0.0-beta.4"
   }
 }
