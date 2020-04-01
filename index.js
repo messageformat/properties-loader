@@ -1,6 +1,7 @@
 const { parse } = require('dot-properties')
 const loaderUtils = require('loader-utils')
 const MessageFormat = require('messageformat')
+const compileModule = require('messageformat/compile-module');
 const path = require('path')
 const uv = require('uv')
 
@@ -16,22 +17,23 @@ function localeFromResourcePath(resourcePath, pathSep, defaultLocale) {
   return /^[a-z]{2,3}$/.test(locale || '') ? locale : defaultLocale
 }
 
-module.exports = function(content) {
-  let { biDiSupport, defaultLocale, encoding, keyPath, pathSep } =
+module.exports = function messageformatPropertiesLoader(content) {
+  let { defaultLocale, encoding, keyPath, pathSep, ...mfOpt } =
     loaderUtils.getOptions(this) || {}
 
   if (!encoding || encoding === 'auto')
     encoding = uv(content) ? 'utf8' : 'latin1'
   const input = content.toString(encoding)
 
-  const translations = parse(input, keyPath || false)
+  const messages = parse(input, keyPath || false)
   const locale = localeFromResourcePath(
     this.resourcePath,
     pathSep || '_',
     defaultLocale || 'en'
   )
-  const mf = new MessageFormat(locale)
-  if (biDiSupport) mf.setBiDiSupport()
-  return mf.compile(translations).toString('module.exports')
+  const mf = new MessageFormat(locale, mfOpt)
+  return compileModule(mf, messages);
 }
+
+// get content as Buffer rather than string
 module.exports.raw = true

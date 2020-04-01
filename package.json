@@ -25,11 +25,14 @@
     "uv": "^1.1.0"
   },
   "peerDependencies": {
-    "messageformat": "1.x | 2.x"
+    "messageformat": "^3.0.0-beta"
   },
   "prettier": {
     "trailingComma": "none",
     "semi": false,
     "singleQuote": true
+  },
+  "devDependencies": {
+    "messageformat": "^3.0.0-beta.1"
   }
 }
