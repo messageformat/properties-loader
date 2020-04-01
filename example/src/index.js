@@ -1,15 +1,17 @@
+import Messages from 'messageformat-runtime/messages'
 import en from './messages_en.properties'
-import MessageFormat from 'messageformat/lib/get'
-const messages = new MessageFormat({ en })
+
+const messages = new Messages({ en })
 
 function component() {
   const element = document.createElement('div')
-  element.innerHTML = messages.get(['errors', 'format'], [
-    'Your message',
-    messages.get(['errors', 'messages', 'wrong_length'], { count: 42 })
-  ])
+  element.innerHTML = messages.get(
+    ['errors', 'format'],
+    ['Foo', messages.get(['errors', 'messages', 'wrong_length'], { count: 42 })]
+  )
   return element
 }
 
+console.log('locale', messages.locale)
 console.log('messages', messages.get([]))
-document.body.appendChild(component())
+if (typeof document !== 'undefined') document.body.appendChild(component())

@@ -10,7 +10,7 @@ module.exports = {
     rules: [
       {
         test: /\.properties$/,
-        loader: require.resolve('messageformat-properties-loader'),
+        loader: 'messageformat-properties-loader',
         options: {
           keyPath: true
         }

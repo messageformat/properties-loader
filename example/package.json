@@ -1,21 +1,20 @@
 {
   "name": "messageformat-properties-loader-example",
-  "version": "0.1.0",
   "description": "Minimal example for messageformat-properties-loader",
   "private": true,
   "scripts": {
-    "build": "webpack",
-    "prepare": "npm run build"
+    "build": "webpack --mode production"
   },
   "main": "src/index.js",
   "repository": "https://github.com/messageformat/properties-loader",
   "author": "Eemeli Aro <eemeli@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "messageformat-properties-loader": "^0.3.0",
-    "webpack": "^3.11.0"
+    "messageformat-properties-loader": "file:..",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "messageformat": "^2.0.0-beta.4"
+    "messageformat-runtime": "^3.0.0-beta.0"
   }
 }
