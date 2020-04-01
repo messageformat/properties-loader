@@ -25,5 +25,10 @@
   },
   "peerDependencies": {
     "messageformat": "1.x | 2.x"
+  },
+  "prettier": {
+    "trailingComma": "none",
+    "semi": false,
+    "singleQuote": true
   }
 }

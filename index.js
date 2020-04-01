@@ -5,7 +5,7 @@ const path = require('path')
 
 // expected to follow the pattern baseName_language[_script]_country_variant.properties
 // source: https://docs.oracle.com/javase/9/docs/api/java/util/ResourceBundle.html#getBundle-java.lang.String-java.util.Locale-java.lang.ClassLoader-
-function localeFromResourcePath (resourcePath, pathSep, defaultLocale) {
+function localeFromResourcePath(resourcePath, pathSep, defaultLocale) {
   const parts = path.basename(resourcePath).split(pathSep)
   const locale = parts[1] && parts[1].replace(/\..*$/, '').toLowerCase()
   if (locale === 'pt-pt' || (locale === 'pt' && /^pt/i.test(parts[2]))) {
@@ -15,11 +15,16 @@ function localeFromResourcePath (resourcePath, pathSep, defaultLocale) {
   return /^[a-z]{2,3}$/.test(locale || '') ? locale : defaultLocale
 }
 
-module.exports = function (content) {
-  const { biDiSupport, defaultLocale, encoding, keyPath, pathSep } = loaderUtils.getOptions(this) || {}
+module.exports = function(content) {
+  const { biDiSupport, defaultLocale, encoding, keyPath, pathSep } =
+    loaderUtils.getOptions(this) || {}
   const input = content.toString(encoding || 'latin1')
   const translations = parse(input, keyPath || false)
-  const locale = localeFromResourcePath(this.resourcePath, pathSep || '_', defaultLocale || 'en')
+  const locale = localeFromResourcePath(
+    this.resourcePath,
+    pathSep || '_',
+    defaultLocale || 'en'
+  )
   const mf = new MessageFormat(locale)
   if (biDiSupport) mf.setBiDiSupport()
   return mf.compile(translations).toString('module.exports')
