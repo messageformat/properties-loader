@@ -2,6 +2,7 @@ const { parse } = require('dot-properties')
 const loaderUtils = require('loader-utils')
 const MessageFormat = require('messageformat')
 const path = require('path')
+const uv = require('uv')
 
 // expected to follow the pattern baseName_language[_script]_country_variant.properties
 // source: https://docs.oracle.com/javase/9/docs/api/java/util/ResourceBundle.html#getBundle-java.lang.String-java.util.Locale-java.lang.ClassLoader-
@@ -16,9 +17,13 @@ function localeFromResourcePath(resourcePath, pathSep, defaultLocale) {
 }
 
 module.exports = function(content) {
-  const { biDiSupport, defaultLocale, encoding, keyPath, pathSep } =
+  let { biDiSupport, defaultLocale, encoding, keyPath, pathSep } =
     loaderUtils.getOptions(this) || {}
-  const input = content.toString(encoding || 'latin1')
+
+  if (!encoding || encoding === 'auto')
+    encoding = uv(content) ? 'utf8' : 'latin1'
+  const input = content.toString(encoding)
+
   const translations = parse(input, keyPath || false)
   const locale = localeFromResourcePath(
     this.resourcePath,

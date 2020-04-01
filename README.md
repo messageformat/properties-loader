@@ -33,7 +33,8 @@ a browser.
   options: {
     biDiSupport: false,  // enables bi-directional text support
     defaultLocale: 'en', // used if resolution from filename fails
-    encoding: 'latin1',  // .properties file encoding
+    encoding: 'auto',    // .properties file encoding, use one of
+                         // 'auto', 'latin1', or 'utf8'
     keyPath: false,      // if true, dots '.' key names will result
                          // in multi-level objects -- use a string
                          // value to customize
