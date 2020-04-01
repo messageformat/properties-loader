@@ -20,8 +20,8 @@
     "node": ">=6.0"
   },
   "dependencies": {
-    "dot-properties": "^0.1.0",
-    "loader-utils": "^1.1.0"
+    "dot-properties": "^0.4.0",
+    "loader-utils": "^2.0.0"
   },
   "peerDependencies": {
     "messageformat": "1.x | 2.x"
