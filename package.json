@@ -20,7 +20,10 @@
   "author": "Eemeli Aro <eemeli@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": ">=6.0"
+    "node": ">=8.9"
+  },
+  "scripts": {
+    "test": "cd example && npm install && npm run build && node dist/bundle.js"
   },
   "dependencies": {
     "@messageformat/core": "^3.0.1",
