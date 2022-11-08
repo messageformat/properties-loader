@@ -1,0 +1,26 @@
+name: Node.js
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  node-14:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with: { node-version: 14 }
+      - run: npm ci
+      - run: npm test
+  node-latest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with: { node-version: latest }
+      - run: npm ci
+      - run: NODE_OPTIONS=--openssl-legacy-provider npm test
