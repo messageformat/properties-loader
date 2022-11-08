@@ -1,6 +1,6 @@
 {
   "name": "messageformat-properties-loader",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Locale Property Resource Bundle Loader for Webpack",
   "keywords": [
     "properties",
