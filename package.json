@@ -23,19 +23,14 @@
     "node": ">=6.0"
   },
   "dependencies": {
-    "dot-properties": "^0.4.0",
+    "@messageformat/core": "^3.0.1",
+    "dot-properties": "^1.0.1",
     "loader-utils": "^2.0.0",
     "uv": "^1.1.0"
-  },
-  "peerDependencies": {
-    "messageformat": "^3.0.0-beta"
   },
   "prettier": {
     "trailingComma": "none",
     "semi": false,
     "singleQuote": true
-  },
-  "devDependencies": {
-    "messageformat": "^3.0.0-beta.1"
   }
 }

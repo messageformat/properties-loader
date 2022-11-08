@@ -1,7 +1,7 @@
+const MessageFormat = require('@messageformat/core')
+const compileModule = require('@messageformat/core/compile-module')
 const { parse } = require('dot-properties')
 const loaderUtils = require('loader-utils')
-const MessageFormat = require('messageformat')
-const compileModule = require('messageformat/compile-module');
 const path = require('path')
 const uv = require('uv')
 
@@ -32,7 +32,7 @@ module.exports = function messageformatPropertiesLoader(content) {
     defaultLocale || 'en'
   )
   const mf = new MessageFormat(locale, mfOpt)
-  return compileModule(mf, messages);
+  return compileModule(mf, messages)
 }
 
 // get content as Buffer rather than string

@@ -15,6 +15,6 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "messageformat-runtime": "^3.0.0-beta.0"
+    "@messageformat/runtime": "^3.0.0-beta.0"
   }
 }

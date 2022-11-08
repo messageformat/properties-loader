@@ -1,4 +1,4 @@
-import Messages from 'messageformat-runtime/messages'
+import Messages from '@messageformat/runtime/messages'
 import en from './messages_en.properties'
 
 const messages = new Messages({ en })

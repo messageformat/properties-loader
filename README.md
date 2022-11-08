@@ -6,21 +6,17 @@ Property values are parsed directly as ICU MessageFormat. With the default optio
 
 [dot-properties]: https://www.npmjs.com/package/dot-properties
 [messageformat]: https://messageformat.github.io/
-[as in Java Resource Bundles]: https://docs.oracle.com/javase/9/docs/api/java/util/ResourceBundle.html#getBundle-java.lang.String-java.util.Locale-java.lang.ClassLoader-
+[as in java resource bundles]: https://docs.oracle.com/javase/9/docs/api/java/util/ResourceBundle.html#getBundle-java.lang.String-java.util.Locale-java.lang.ClassLoader-
 
 ## Installation
 
 ```sh
-npm install messageformat@next messageformat-properties-loader
+npm install messageformat-properties-loader
 ```
-
-Starting from version 0.4.0, the loader requires messageformat v3, currently in beta.
-
 
 ## Usage
 
 For a working demo of the following, run `npm install && npm run build` in the [`example/`](./example/) directory, and then open `example/dist/index.html` in a browser.
-
 
 #### Webpack configuration
 
@@ -43,7 +39,6 @@ For a working demo of the following, run `npm install && npm run build` in the [
 
 Default option values are shown above, though none are required.
 
-
 #### messages_en.properties
 
 ```
@@ -52,7 +47,6 @@ errors.accepted: {src} must be accepted
 errors.wrong_length: {src} is the wrong length (should be {count, plural, one{1 character} other{# characters}})
 errors.equal_to: {src} must be equal to {count}
 ```
-
 
 #### example.js
 
